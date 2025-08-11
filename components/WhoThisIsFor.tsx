@@ -1,10 +1,9 @@
 "use client"
 
-import React from 'react'
-import { Shield, Building2, GraduationCap, Code2, Heart, LucideIcon } from 'lucide-react'
-import Button from './ui/Button'
-import { scrollToAndFocus } from '@/lib/utils'
-import CTASection from './ui/CTASection'
+import React from "react"
+import { Shield, Building2, GraduationCap, Code2, Heart, LucideIcon } from "lucide-react"
+import { scrollToAndFocus } from "@/lib/utils"
+import CTASection from "./ui/CTASection"
 
 interface AudienceCardProps {
     icon: LucideIcon
@@ -76,7 +75,7 @@ export default function WhoThisIsFor() {
                     </h2>
                     <div className="max-w-3xl mx-auto">
                         <p className="text-xl text-muted-foreground mb-4">
-                            Nobody likes gatekeepers! I'm happy to help bridge the gap from vibe coders to verified coders.
+                            Nobody likes gatekeepers! Im happy to help bridge the gap from vibe coders to verified coders.
                         </p>
                         <div className="flex items-center justify-center space-x-2 text-primary">
                             <Heart className="h-5 w-5" />
@@ -101,12 +100,12 @@ export default function WhoThisIsFor() {
 
                 <CTASection
                     title="Ready to prove your real-world dev skills?"
-                    description="Whether you're a seasoned pro or just starting out, everyone can benefit from testing their practical development abilities when AI can't help."
+                    description="Whether youre a seasoned pro or just starting out, everyone can benefit from testing their practical development abilities when AI cant help."
                     buttonText="Join the Beta"
                     buttonTitle="Join NoVibes beta program"
                     variant="default"
                     maxWidth="xl"
-                    onClick={() => scrollToAndFocus('heroForm')}
+                    onClick={() => scrollToAndFocus("heroForm")}
                 />
 
             </div>

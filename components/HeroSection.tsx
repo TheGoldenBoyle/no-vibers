@@ -29,13 +29,13 @@ export default function HeroSection() {
                         🚀 Beta Coming Soon
                     </span>
                     <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-                        Prove You're a
+                        Prove Youre a
                         <span className="text-primary"> Real Developer</span>
                     </h1>
 
                     <div className="text-xl md:text-2xl max-w-3xl mx-auto space-y-2">
                         <p>
-                            When AI can't help you, can you debug real-world problems?
+                            When AI cant help you, can you debug real-world problems?
                         </p>
                         <p className="lg:mx-10"> Take practical challenges that separate real devs from prompt engineers</p>
                     </div>
@@ -66,7 +66,7 @@ export default function HeroSection() {
                     ) : (
                         <div className="flex items-center justify-center space-x-2 text-success">
                             <CheckCircle className="h-6 w-6" aria-hidden="true" />
-                            <span className="text-lg font-medium">You're on the list! 🎉</span>
+                            <span className="text-lg font-medium">Youre on the list! 🎉</span>
                         </div>
                     )}
                     <p className="text-sm text-muted mt-3">
