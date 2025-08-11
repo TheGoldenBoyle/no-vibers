@@ -1,26 +1,61 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fffbeb;
+  --foreground: #451a03;
+  --primary: #c2410c;
+  --primary-muted: #ea5a0c74;
+  --secondary: #fef3c7;
+  --secondary-muted: #fed7aa;
+  --success: #166534;
+  --info: #075985;
+  --warning: #b45309;
+  --muted: #a16207;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: var(--primary);
+  --color-primary-muted: var(--primary-muted);
+  --color-secondary: var(--secondary);
+  --color-secondary-muted: var(--secondary-muted);
+  --color-success: var(--success);
+  --color-info: var(--info);
+  --color-warning: var(--warning);
+  --color-muted: var(--muted);
+  
+  /* Override Tailwind's default fonts */
+  --font-sans: var(--font-space-grotesk), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), 'Courier New', monospace;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #1c0f0a;
+    --foreground: #fef3c7;
+    --primary: #c2410c;
+    --primary-muted: #ea5a0c53;
+    --secondary: #292116;
+    --secondary-muted: #8c5723;
+    --success: #22c55e;
+    --info: #0ea5e9;
+    --warning: #f59e0b;
+    --muted: #d97706;
   }
+}
+
+/* Force font application */
+* {
+  font-family: var(--font-jetbrains-mono), 'Courier New', monospace;
+}
+
+/* Space Grotesk for all headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-space-grotesk), system-ui, sans-serif !important;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
