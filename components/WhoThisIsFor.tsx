@@ -10,7 +10,7 @@ interface AudienceCardProps {
     title: string
     subtitle: string
     features: string[]
-    ctaText: string
+    // ctaText: string
 }
 
 const audienceData = [
@@ -93,7 +93,7 @@ export default function WhoThisIsFor() {
                             title={audience.title}
                             subtitle={audience.subtitle}
                             features={audience.features}
-                            ctaText={audience.ctaText}
+                            // ctaText={audience.ctaText}
                         />
                     ))}
                 </div>
@@ -118,7 +118,7 @@ function AudienceCard({
     title,
     subtitle,
     features,
-    ctaText
+    // ctaText
 }: AudienceCardProps) {
     return (
         <div className="bg-secondary rounded-xl p-4 border hover:border-primary/80 border-primary-muted transition-all shadow-xl group flex flex-col items-center text-center max-w-[80vw] mx-auto w-full">
