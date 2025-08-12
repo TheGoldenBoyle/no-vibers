@@ -1,0 +1,15 @@
+{
+  "signups": [
+    {
+      "email": "admin@test.com",
+      "timestamp": "2025-08-12T13:04:49.579Z",
+      "number": 1
+    },
+    {
+      "email": "adminss@test.com",
+      "timestamp": "2025-08-12T13:06:12.509Z",
+      "number": 2
+    }
+  ],
+  "count": 2
+}

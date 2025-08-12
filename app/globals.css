@@ -59,3 +59,33 @@ body {
   background: var(--background);
   color: var(--foreground);
 }
+
+@keyframes rocket {
+  0% {
+    transform: translate(0, 0) rotate(45deg);
+    opacity: 1;
+    scale: 1;
+  }
+  50% {
+    scale: 1.2;
+  }
+  100% {
+    transform: translate(calc(100vw - 4rem), calc(-100vh + 4rem)) rotate(45deg);
+    opacity: 0;
+    scale: 0.8;
+  }
+}
+
+.animate-rocket {
+  animation: rocket 1.5s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+.sparkle {
+  animation: sparkle 0.5s ease-in-out infinite;
+}
