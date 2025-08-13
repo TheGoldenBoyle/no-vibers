@@ -1,47 +1,11 @@
 import { NextRequest, NextResponse } from "next/server"
 import { Resend } from "resend"
-import { promises as fs } from "fs"
-import path from "path"
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
-// Simple file-based storage for MVP
-const SIGNUPS_FILE = path.join(process.cwd(), "data", "signups.json")
-
-interface Signup {
-	email: string
-	timestamp: string
-	number: number
-}
-
-interface SignupsData {
-	signups: Signup[]
-	count: number
-}
-
-async function ensureDataDirectory() {
-	const dataDir = path.join(process.cwd(), "data")
-	try {
-		await fs.access(dataDir)
-	} catch {
-		await fs.mkdir(dataDir, { recursive: true })
-	}
-}
-
-async function getSignups(): Promise<SignupsData> {
-	try {
-		await ensureDataDirectory()
-		const data = await fs.readFile(SIGNUPS_FILE, "utf8")
-		return JSON.parse(data)
-	} catch {
-		return { signups: [], count: 0 }
-	}
-}
-
-async function saveSignups(data: SignupsData): Promise<void> {
-	await ensureDataDirectory()
-	await fs.writeFile(SIGNUPS_FILE, JSON.stringify(data, null, 2))
-}
+// Simple in-memory storage for now (resets on deployment)
+let signupsCount = 0
+let signupsEmails: string[] = []
 
 export async function POST(request: NextRequest) {
 	try {
@@ -56,33 +20,21 @@ export async function POST(request: NextRequest) {
 
 		const normalizedEmail = email.toLowerCase().trim()
 
-		const signupsData = await getSignups()
-
-		const existingSignup = signupsData.signups.find(
-			(signup) => signup.email === normalizedEmail
-		)
-
-		if (existingSignup) {
+		const existingIndex = signupsEmails.indexOf(normalizedEmail)
+		if (existingIndex !== -1) {
+			const existingNumber = existingIndex + 1
 			return NextResponse.json(
 				{
-					error: `You're already on the list! (You were #${existingSignup.number})`,
+					error: `You're already on the list! (You were #${existingNumber})`,
 					isAlreadySignedUp: true,
 				},
 				{ status: 400 }
 			)
 		}
 
-		const newNumber = signupsData.count + 1
-		const newSignup: Signup = {
-			email: normalizedEmail,
-			timestamp: new Date().toISOString(),
-			number: newNumber,
-		}
-
-		signupsData.signups.push(newSignup)
-		signupsData.count = newNumber
-
-		await saveSignups(signupsData)
+		signupsEmails.push(normalizedEmail)
+		signupsCount = signupsEmails.length
+		const newNumber = signupsCount
 
 		const { data, error } = await resend.emails.send({
 			from: process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev",
@@ -158,6 +110,17 @@ export async function POST(request: NextRequest) {
       `,
 		})
 
+		if (error) {
+			console.error("Resend error:", error)
+			return NextResponse.json(
+				{ error: "Failed to send email" },
+				{ status: 500 }
+			)
+		}
+
+		console.log("✅ Email sent successfully! Signup #", newNumber)
+
+		// Create custom response message based on signup number
 		let message = `Thanks for signing up! You're #${newNumber} on the list. 🎉`
 
 		if (newNumber <= 50) {
