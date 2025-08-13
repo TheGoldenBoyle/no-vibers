@@ -35,9 +35,9 @@ export const metadata: Metadata = {
         'genuine skills',
         'hiring assessment'
     ],
-    authors: [{ name: 'NoVibers', url: 'https://novibers.com' }],
-    creator: 'NoVibers',
-    publisher: 'NoVibers',
+    authors: [{ name: 'TheGoldenBoyle', url: 'https://novibers.com' }],
+    creator: 'TheGoldenBoyle',
+    publisher: 'TheGoldenBoyle',
 
     openGraph: {
         type: 'website',
