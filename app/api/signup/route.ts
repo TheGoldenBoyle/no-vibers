@@ -5,7 +5,7 @@ const resend = new Resend(process.env.RESEND_API_KEY)
 
 // Simple in-memory storage for now (resets on deployment)
 let signupsCount = 0
-let signupsEmails: string[] = []
+const signupsEmails: string[] = []
 
 export async function POST(request: NextRequest) {
 	try {
@@ -25,7 +25,7 @@ export async function POST(request: NextRequest) {
 			const existingNumber = existingIndex + 1
 			return NextResponse.json(
 				{
-					error: `You're already on the list! (You were #${existingNumber})`,
+					error: `Youre already on the list! (You were #${existingNumber})`,
 					isAlreadySignedUp: true,
 				},
 				{ status: 400 }
@@ -53,7 +53,7 @@ export async function POST(request: NextRequest) {
           ${
 				newNumber <= 10
 					? `<div style="background: #166534; color: white; padding: 15px; border-radius: 8px; margin: 20px 0;">
-              <p style="margin: 0; font-weight: bold;">🔥 First 10 signups! You're building momentum!</p>
+              <p style="margin: 0; font-weight: bold;">🔥 First 10 signups! Youre building momentum!</p>
             </div>`
 					: newNumber <= 25
 					? `<div style="background: #b45309; color: white; padding: 15px; border-radius: 8px; margin: 20px 0;">
@@ -121,14 +121,14 @@ export async function POST(request: NextRequest) {
 		console.log("✅ Email sent successfully! Signup #", newNumber)
 
 		// Create custom response message based on signup number
-		let message = `Thanks for signing up! You're #${newNumber} on the list. 🎉`
+		let message = `Thanks for signing up! Youre #${newNumber} on the list. 🎉`
 
 		if (newNumber <= 50) {
-			message = `Thanks for the early support! You're #${newNumber} of the first 50. 🚀`
+			message = `Thanks for the early support! Youre #${newNumber} of the first 50. 🚀`
 		} else if (newNumber === 100) {
-			message = `Wow! You're signup #${newNumber}! Thanks for the amazing support! 🔥`
+			message = `Wow! Youre signup #${newNumber}! Thanks for the amazing support! 🔥`
 		} else if (newNumber > 100) {
-			message = `Thanks for joining! You're #${newNumber}. The hype is real! 💪`
+			message = `Thanks for joining! Youre #${newNumber}. The hype is real! 💪`
 		}
 
 		return NextResponse.json({
