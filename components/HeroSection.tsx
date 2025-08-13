@@ -139,24 +139,6 @@ export default function HeroSection() {
                     )}
                 </div>
             </div>
-
-            {/* CSS for rocket animation */}
-            <style jsx>{`
-                @keyframes rocket {
-                    0% {
-                        transform: translate(0, 0) rotate(45deg);
-                        opacity: 1;
-                    }
-                    100% {
-                        transform: translate(calc(100vw - 2rem), calc(-100vh + 2rem)) rotate(45deg);
-                        opacity: 0;
-                    }
-                }
-                
-                .animate-rocket {
-                    animation: rocket 1.5s ease-out forwards;
-                }
-            `}</style>
         </section>
     )
 }

@@ -4,7 +4,7 @@ import Link from "next/link"
 export default function Navbar() {
 
     return (
-        <header className="sticky top-0">
+        <header className="sticky top-0 z-[100]">
 
             <nav 
                 className="px-6 py-4 bg-gradient-to-tr from-background/80 via-secondary/80 to-primary/80"
