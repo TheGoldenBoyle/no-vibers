@@ -39,6 +39,10 @@ export const metadata: Metadata = {
     creator: 'TheGoldenBoyle',
     publisher: 'TheGoldenBoyle',
 
+    verification: {
+        google: 'jo0KUpPdyrmwlo2k0yA7n8eGfoDddzpCwvAB3TW9aOo',
+    },
+
     openGraph: {
         type: 'website',
         locale: 'en_US',
