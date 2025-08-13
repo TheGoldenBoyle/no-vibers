@@ -60,6 +60,10 @@ body {
   color: var(--foreground);
 }
 
+section h1 {
+  font-size: inherit; 
+}
+
 @keyframes rocket {
   0% {
     transform: translate(0, 0) rotate(45deg);
