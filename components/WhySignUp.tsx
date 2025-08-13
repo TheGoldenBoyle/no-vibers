@@ -1,10 +1,10 @@
-'use client'
+"use client"
 
-import React from 'react'
-import { Trophy, Target, Users, TrendingUp, Globe, BookOpen, Zap, Star } from 'lucide-react'
-import { scrollToAndFocus } from '@/lib/utils'
-import CTASection from './ui/CTASection'
-import { useIntersectionObserver } from '@/lib/useIntersectionObserver'
+import React from "react"
+import { Trophy, Target, Users, TrendingUp, Globe, BookOpen, Zap, Star } from "lucide-react"
+import { scrollToAndFocus } from "@/lib/utils"
+import CTASection from "./ui/CTASection"
+import { useIntersectionObserver } from "@/lib/useIntersectionObserver"
 
 const benefitsData = [
     {
@@ -35,7 +35,7 @@ const benefitsData = [
     {
         icon: BookOpen,
         title: "Learn from Experts",
-        description: "Get feedback from industry pros who've seen it all"
+        description: "Get feedback from industry pros whove seen it all"
     },
     {
         icon: Zap,
@@ -61,11 +61,11 @@ function BenefitCard({ benefit, index }: BenefitCardProps) {
         <div
             ref={ref}
             className={`text-center group transform transition-all duration-700 ${isVisible
-                    ? 'translate-y-0 opacity-100'
-                    : 'translate-y-8 opacity-0'
+                    ? "translate-y-0 opacity-100"
+                    : "translate-y-8 opacity-0"
                 }`}
             style={{
-                transitionDelay: isVisible ? `${index * 100}ms` : '0ms'
+                transitionDelay: isVisible ? `${index * 100}ms` : "0ms"
             }}
         >
             <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-all duration-300 group-hover:scale-110">
@@ -91,7 +91,7 @@ export default function WhySignUp() {
                 {/* Header */}
                 <div
                     ref={headerRef}
-                    className={`text-center mb-16 transform transition-all duration-700 ${headerVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+                    className={`text-center mb-16 transform transition-all duration-700 ${headerVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
                         }`}
                 >
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -99,7 +99,7 @@ export default function WhySignUp() {
                     </h2>
                     <div className="max-w-3xl mx-auto">
                         <p className="text-xl mb-4">
-                            Let's be honest, vibe coding is cool... but it's error prone. Fill in the missing gaps and become unstoppable.
+                            Let"s be honest, vibe coding is cool... but it"s error prone. Fill in the missing gaps and become unstoppable.
                         </p>
                         <p className="text-lg">
                             AI is great, but putting all the pieces together is the real challenge.
@@ -120,17 +120,17 @@ export default function WhySignUp() {
 
                 <div
                     ref={ctaRef}
-                    className={`transform transition-all duration-700 ${ctaVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+                    className={`transform transition-all duration-700 ${ctaVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
                         }`}
-                    style={{ transitionDelay: ctaVisible ? '800ms' : '0ms' }}
+                    style={{ transitionDelay: ctaVisible ? "800ms" : "0ms" }}
                 >
                     <CTASection
-                        title="Knowing how to prompt and make an app doesn't make you a dev"
+                        title="Knowing how to prompt and make an app doesnt make you a dev"
                         description="Putting it all together does. The full stack. Join the devs proving they can handle real production challenges."
                         buttonText="Get Notified on Launch!"
                         buttonTitle="Start proving your real developer skills"
                         buttonSize="lg"
-                        onClick={() => scrollToAndFocus('heroForm')}
+                        onClick={() => scrollToAndFocus("heroForm")}
                     />
                 </div>
             </div>
