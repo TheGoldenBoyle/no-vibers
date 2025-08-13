@@ -99,7 +99,7 @@ export default function WhySignUp() {
                     </h2>
                     <div className="max-w-3xl mx-auto">
                         <p className="text-xl mb-4">
-                            Let"s be honest, vibe coding is cool... but it"s error prone. Fill in the missing gaps and become unstoppable.
+                            Lets be honest, vibe coding is cool... but its error prone. Fill in the missing gaps and become unstoppable.
                         </p>
                         <p className="text-lg">
                             AI is great, but putting all the pieces together is the real challenge.
