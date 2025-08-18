@@ -61,7 +61,3 @@ body {
   color: var(--foreground);
 }
 
-section h1 {
-  font-size: inherit; 
-}
-

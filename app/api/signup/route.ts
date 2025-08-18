@@ -3,7 +3,6 @@ import { Resend } from "resend"
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
-// Simple in-memory storage for now (resets on deployment)
 let signupsCount = 0
 const signupsEmails: string[] = []
 

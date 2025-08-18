@@ -1,8 +1,9 @@
-import type { Metadata } from 'next'
 import { Space_Grotesk, JetBrains_Mono } from 'next/font/google'
 import './styles/globals.css'
-import Navbar from '../components/partials/Navbar'
-import Footer from '../components/partials/Footer'
+import Footer from '@/components/partials/Footer'
+import Navbar from '@/components/partials/Navbar'
+import { Metadata } from 'next'
+
 
 const spaceGrotesk = Space_Grotesk({ 
     subsets: ['latin'],
@@ -17,23 +18,24 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-    title: 'NoVibers - Prove Your Real Skills | When AI Can\'t Help You',
-    description: 'Test your real-world problem-solving skills with challenges that AI can\'t solve for you. Perfect for professionals wanting exposure, learners filling knowledge gaps, and companies seeking to identify genuine talent.',
+    title: 'NoVibers - Real Full-Stack Devs Powered by AI',
+    description: 'When real-world full-stack expertise meets AI, we build unstoppable software with speed and passion. Join @thegoldenbolyes army of builders who ship fast and deliver software that lasts.',
     keywords: [
-        'skills test',
-        'problem solving',
-        'real world challenges',
-        'skill verification',
-        'learning gaps',
-        'practical skills',
-        'AI resistant test',
-        'skill assessment',
-        'knowledge verification',
-        'professional exposure',
-        'talent identification',
-        'candidate screening',
-        'genuine skills',
-        'hiring assessment'
+        'full-stack development',
+        'AI-powered coding',
+        'real-world experience',
+        'software development',
+        'build with passion',
+        'AI and development',
+        'no gatekeepers',
+        '10x engineers',
+        'coding army',
+        'software that lasts',
+        'real developers',
+        'fast shipping code',
+        'AI-driven development',
+        'full-stack skills',
+        'developer community'
     ],
     authors: [{ name: 'TheGoldenBoyle', url: 'https://novibers.com' }],
     creator: 'TheGoldenBoyle',
@@ -48,14 +50,14 @@ export const metadata: Metadata = {
         locale: 'en_US',
         url: 'https://novibers.com',
         siteName: 'NoVibers',
-        title: 'NoVibers - Prove Your Real Skills When AI Can\'t Help',
-        description: 'Test your real-world problem-solving abilities, gain professional exposure, and help companies identify genuine talent. Perfect for learners filling gaps and professionals proving their skills.',
+        title: 'NoVibers - Real Full-Stack Devs Powered by AI',
+        description: 'Join @thegoldenbolyes army of full-stack devs who blend real-world grit with AI to build software that lasts. No gatekeepers, just builders with speed and passion.',
         images: [
             {
                 url: '/assets/images/og-image.png',
                 width: 1200,
                 height: 630,
-                alt: 'NoVibers - Prove Your Real Skills When AI Can\'t Help',
+                alt: 'NoVibers - Real Full-Stack Devs Powered by AI',
                 type: 'image/jpeg',
             }
         ],
@@ -65,12 +67,11 @@ export const metadata: Metadata = {
         card: 'summary_large_image',
         site: '@TheGoldenBoyle',
         creator: '@TheGoldenBoyle',
-        title: 'NoVibers - Prove Your Real Skills When AI Can\'t Help',
-        description: 'Test your real-world problem-solving abilities, gain professional exposure, and help companies identify genuine talent. Perfect for learners and professionals alike.',
+        title: 'NoVibers - Real Full-Stack Devs Powered by AI',
+        description: 'When full-stack meets AI, we build with speed, passion, and real-world experience. Join @thegoldenbolyes army to ship software that lasts.',
         images: ['/assets/images/og-image.png'],
     },
 
-    // Icons (NEED TO ADD)
     icons: {
         icon: [
             { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
@@ -88,9 +89,8 @@ export const metadata: Metadata = {
     alternates: {
         canonical: 'https://novibers.com',
     },
-    category: 'education',
+    category: 'technology',
 }
-
 
 export default function RootLayout({
     children,
@@ -101,13 +101,7 @@ export default function RootLayout({
         <html lang="en">
             <body className={`${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
 
-                <Navbar />
-
-                <main className="bg-gradient-to-br from-background via-secondary to-primary pb-8">
-                    {children}
-                </main>
-
-                <Footer />
+                {children}
 
             </body>
         </html>
