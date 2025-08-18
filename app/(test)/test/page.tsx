@@ -14,7 +14,7 @@ interface Message {
 }
 
 export default function ChallengeTestPage() {
-  const [timeLeft, setTimeLeft] = useState(120)
+  const [timeLeft, setTimeLeft] = useState(60)
   const [isTimerActive, setIsTimerActive] = useState(false)
   const [isChatOpen, setIsChatOpen] = useState(false)
   const [testStarted, setTestStarted] = useState(false)
@@ -151,7 +151,7 @@ export default function ChallengeTestPage() {
     }
     setMessages(prev => [...prev, failureMessage])
   }
-  
+
   useEffect(() => {
     if (isTimerActive && timeLeft > 0 && !testPassed && testStarted) {
       const timer = setTimeout(() => setTimeLeft(timeLeft - 1), 1000)
@@ -326,16 +326,16 @@ export default function ChallengeTestPage() {
             
             <ul style={{ fontSize: '18px', lineHeight: '1.8', paddingLeft: '20px' }}>
               <li style={{ marginBottom: '15px' }}>
-                <strong>You'll face a common web development issue</strong> that every real developer encounters
+                <strong>Youll face a common web development issue</strong> that every real developer encounters
               </li>
               <li style={{ marginBottom: '15px' }}>
-                <strong>The page will look broken</strong> - but it's intentional
+                <strong>The page will look broken</strong> - but its intentional
               </li>
               <li style={{ marginBottom: '15px' }}>
                 <strong>TheGoldenBoyle will be there to help</strong> - look for the flashing avatar
               </li>
               <li style={{ marginBottom: '15px' }}>
-                <strong>You have 2 minutes</strong> to figure out what went wrong
+                <strong>You have 1 minute</strong> to figure out what went wrong
               </li>
               <li style={{ marginBottom: '15px' }}>
                 <strong>Work together</strong> to solve the problem through chat
@@ -344,7 +344,7 @@ export default function ChallengeTestPage() {
           </div>
           
           <p style={{ fontSize: '20px', marginBottom: '30px', color: '#666' }}>
-            Ready to prove you're a real developer?
+            Ready to prove youre a real developer?
           </p>
           
           <button
@@ -364,7 +364,7 @@ export default function ChallengeTestPage() {
             onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
             onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
           >
-            Let's Go! 🔥
+            Lets Go! 🔥
           </button>
         </div>
       </div>
@@ -391,7 +391,7 @@ export default function ChallengeTestPage() {
           🔥 WELCOME TO THE NOVIBERS ARMY! 🔥
         </h1>
         <p style={{ fontSize: '24px', marginBottom: '30px' }}>
-          You proved you're a real dev, not a vibe!
+          You proved youre a noviber, for now!
         </p>
         
         {showEmailCapture && (
@@ -459,8 +459,7 @@ export default function ChallengeTestPage() {
       </div>
     )
   }
-
-  // Main test interface
+  
   return (
     <>
       <TestTimer timeLeft={timeLeft} isVisible={testStarted} />

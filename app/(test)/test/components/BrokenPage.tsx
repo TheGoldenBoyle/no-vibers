@@ -19,16 +19,16 @@ export default function BrokenPage({ timeLeft, testFailed }: BrokenPageProps) {
             <header>
                 <nav>
                     <div>
-                        <a href="/" style={{ color: 'blue', textDecoration: 'underline' }}>
+                        <span style={{ color: 'blue', textDecoration: 'underline' }}>
                             <span>⚡ NoVibers</span>
-                        </a>
+                        </span>
                         <div style={{ marginTop: '10px' }}>
-                            <a href="https://github.com/TheGoldenBoyle" style={{ color: 'blue', textDecoration: 'underline', marginRight: '15px' }}>
+                            <span style={{ color: 'blue', textDecoration: 'underline', marginRight: '15px' }}>
                                 GitHub
-                            </a>
-                            <a href="https://x.com/TheGoldenBoyle" style={{ color: 'blue', textDecoration: 'underline' }}>
+                            </span>
+                            <span style={{ color: 'blue', textDecoration: 'underline' }}>
                                 X (Twitter)
-                            </a>
+                            </span>
                         </div>
                     </div>
                 </nav>
