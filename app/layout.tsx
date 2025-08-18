@@ -1,6 +1,7 @@
 import { Space_Grotesk, JetBrains_Mono } from 'next/font/google'
 import './styles/globals.css'
 import { Metadata } from 'next'
+import { Analytics } from "@vercel/analytics/next"
 
 
 const spaceGrotesk = Space_Grotesk({ 
@@ -98,7 +99,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
-
+                <Analytics/> 
                 {children}
 
             </body>
