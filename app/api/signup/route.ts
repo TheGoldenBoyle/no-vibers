@@ -35,7 +35,7 @@ export async function POST(request: NextRequest) {
 		signupsCount = signupsEmails.length
 		const newNumber = signupsCount
 
-		const { data, error } = await resend.emails.send({
+		const { error } = await resend.emails.send({
 			from: process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev",
 			to: process.env.RESEND_TO_EMAIL || "thegoldenboyle@gmail.com",
 			subject: `🚀 New NoVibes Signup #${newNumber}! (${newNumber}/∞)`,

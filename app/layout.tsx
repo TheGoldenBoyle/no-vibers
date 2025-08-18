@@ -1,7 +1,5 @@
 import { Space_Grotesk, JetBrains_Mono } from 'next/font/google'
 import './styles/globals.css'
-import Footer from '@/components/partials/Footer'
-import Navbar from '@/components/partials/Navbar'
 import { Metadata } from 'next'
 
 

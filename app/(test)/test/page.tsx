@@ -138,15 +138,6 @@ export default function ChallengeTestPage() {
     }
   }, [testStarted, messagesLoaded, testPassed, testFailed, lastMessageTime, timeLeft, messages, isChatOpen])
 
-  // Timer logic
-  useEffect(() => {
-    if (isTimerActive && timeLeft > 0 && !testPassed && testStarted) {
-      const timer = setTimeout(() => setTimeLeft(timeLeft - 1), 1000)
-      return () => clearTimeout(timer)
-    } else if (timeLeft === 0 && !testPassed && testStarted) {
-      handleTestFailure()
-    }
-  }, [timeLeft, isTimerActive, testPassed, testStarted])
 
   const handleTestFailure = () => {
     setIsTimerActive(false)
@@ -160,6 +151,16 @@ export default function ChallengeTestPage() {
     }
     setMessages(prev => [...prev, failureMessage])
   }
+  
+  useEffect(() => {
+    if (isTimerActive && timeLeft > 0 && !testPassed && testStarted) {
+      const timer = setTimeout(() => setTimeLeft(timeLeft - 1), 1000)
+      return () => clearTimeout(timer)
+    } else if (timeLeft === 0 && !testPassed && testStarted) {
+      handleTestFailure()
+    }
+  }, [timeLeft, isTimerActive, testPassed, testStarted, handleTestFailure])
+
 
   const handleTestSuccess = () => {
     setIsTimerActive(false)
