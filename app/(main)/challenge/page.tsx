@@ -1,8 +1,8 @@
-'use client'
+"use client"
 
-import React from 'react'
-import LinkButton from '../../../components/ui/LinkButton'
-import { Terminal, Clock, Zap, Trophy, AlertTriangle } from 'lucide-react'
+import React from "react"
+import LinkButton from "../../../components/ui/LinkButton"
+import { Terminal, Clock, Zap, Trophy, AlertTriangle } from "lucide-react"
 
 export default function ChallengePage() {
     return (
@@ -21,7 +21,7 @@ export default function ChallengePage() {
                     </h1>
 
                     <div className="text-xl md:text-2xl max-w-3xl mx-auto space-y-2">
-                        <p>Prove you're not a prompstitute</p>
+                        <p>Prove youre not a prompstitute</p>
                         <p className="text-muted">Real devs only. Vibers need not apply.</p>
                     </div>
                 </div>
@@ -31,7 +31,7 @@ export default function ChallengePage() {
                     <div className="bg-secondary p-6 rounded-xl border border-primary-muted">
                         <Clock className="h-8 w-8 text-primary mx-auto mb-3" />
                         <h3 className="font-bold text-lg mb-2">60 Seconds</h3>
-                        <p className="text-muted">That's all you get. Real devs are fast.</p>
+                        <p className="text-muted">Thats all you get. Real devs are fast.</p>
                     </div>
 
                     <div className="bg-secondary p-6 rounded-xl border border-primary-muted">
@@ -53,11 +53,11 @@ export default function ChallengePage() {
                     <div className="space-y-4 text-left">
                         <div className="flex items-start gap-3">
                             <AlertTriangle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                            <p>You'll face a broken webpage. Find what's wrong and tell TheGoldenBoyle.</p>
+                            <p>Youll face a broken webpage. Find whats wrong and tell TheGoldenBoyle.</p>
                         </div>
                         <div className="flex items-start gap-3">
                             <AlertTriangle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                            <p>60 seconds on the clock. When it hits zero, you're out.</p>
+                            <p>60 seconds on the clock. When it hits zero, youre out.</p>
                         </div>
                         <div className="flex items-start gap-3">
                             <AlertTriangle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
@@ -65,19 +65,19 @@ export default function ChallengePage() {
                         </div>
                         <div className="flex items-start gap-3">
                             <AlertTriangle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                            <p>Fail and you're locked out for a week. No second chances.</p>
+                            <p>Fail and youre locked out for a week. No second chances.</p>
                         </div>
                     </div>
                 </div>
 
-                {/* What You're Testing */}
+                {/* What Youre Testing */}
                 <div className="bg-secondary rounded-xl p-8 border border-primary-muted max-w-2xl mx-auto">
-                    <h2 className="text-2xl font-bold mb-6 text-primary">What We're Testing</h2>
+                    <h2 className="text-2xl font-bold mb-6 text-primary">What Were Testing</h2>
                     <div className="text-left space-y-3">
                         <p>✅ <strong>Real debugging skills</strong> - Can you spot obvious issues?</p>
                         <p>✅ <strong>Developer instincts</strong> - Do you know where to look?</p>
                         <p>✅ <strong>Speed under pressure</strong> - Real devs work fast</p>
-                        <p>❌ <strong>Not your prompting skills</strong> - AI can't help you here</p>
+                        <p>❌ <strong>Not your prompting skills</strong> - AI cant help you here</p>
                     </div>
                 </div>
 
@@ -85,7 +85,7 @@ export default function ChallengePage() {
                 <div className="space-y-6">
                     <div className="space-y-4">
                         <p className="text-lg text-muted">
-                            Ready to prove you're not just another prompt engineer?
+                            Ready to prove youre not just another prompt engineer?
                         </p>
                         <p className="text-primary font-semibold">
                             Real devs figure this out in seconds. Vibers take days.
@@ -101,7 +101,7 @@ export default function ChallengePage() {
                     </LinkButton>
 
                     <p className="text-sm text-muted">
-                        By starting, you agree you're not using any AI assistance
+                        By starting, you agree youre not using any AI assistance
                     </p>
                 </div>
 

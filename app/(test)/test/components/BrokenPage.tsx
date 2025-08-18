@@ -45,9 +45,6 @@ export default function BrokenPage({ timeLeft, testFailed }: BrokenPageProps) {
                         <p>Recruiting fearless trend setters for the revolution...</p>
                         <span style={{ fontWeight: 'bold' }}>No Vibers</span>
                         <br />
-                        <a href="https://x.com/thegoldenbolye" style={{ color: 'blue', textDecoration: 'underline' }}>
-                            Join the army @thegoldenbolye
-                        </a>
                     </div>
                 </section>
 
@@ -56,14 +53,14 @@ export default function BrokenPage({ timeLeft, testFailed }: BrokenPageProps) {
                         <h1 style={{ fontSize: '28px', fontWeight: 'bold', margin: '20px 0' }}>
                             The NoVibers Test
                         </h1>
-                        <p>Prove you're not a prompstitute</p>
+                        <p>Prove youre not a prompstitute</p>
                         <p>Real devs only. Vibers need not apply.</p>
 
                         <div>
                             <div>
                                 <span>⏰</span>
                                 <h3>60 Seconds</h3>
-                                <p>That's all you get. Real devs are fast.</p>
+                                <p>Thats all you get. Real devs are fast.</p>
                             </div>
 
                             <div>
@@ -82,19 +79,19 @@ export default function BrokenPage({ timeLeft, testFailed }: BrokenPageProps) {
                         <div>
                             <h2 style={{ fontWeight: 'bold', margin: '15px 0' }}>The Rules</h2>
                             <div>
-                                <p>⚠️ You'll face a broken webpage. Find what's wrong and tell TheGoldenBoyle.</p>
-                                <p>⚠️ {timeLeft} seconds on the clock. When it hits zero, you're out.</p>
+                                <p>⚠️ Youll face a broken webpage. Find whats wrong and tell TheGoldenBoyle.</p>
+                                <p>⚠️ {timeLeft} seconds on the clock. When it hits zero, youre out.</p>
                                 <p>⚠️ No external help. No AI assistants. Just your real dev skills.</p>
-                                <p>⚠️ Fail and you're locked out for a week. No second chances.</p>
+                                <p>⚠️ Fail and youre locked out for a week. No second chances.</p>
                             </div>
                         </div>
 
                         <div>
-                            <h2 style={{ fontWeight: 'bold', margin: '15px 0' }}>What We're Testing</h2>
+                            <h2 style={{ fontWeight: 'bold', margin: '15px 0' }}>What Were Testing</h2>
                             <p>✅ Real debugging skills - Can you spot obvious issues?</p>
                             <p>✅ Developer instincts - Do you know where to look?</p>
                             <p>✅ Speed under pressure - Real devs work fast</p>
-                            <p>❌ Not your prompting skills - AI can't help you here</p>
+                            <p>❌ Not your prompting skills - AI cant help you here</p>
                         </div>
 
                         <p style={{ margin: '20px 0', fontSize: '14px' }}>
@@ -137,7 +134,7 @@ export default function BrokenPage({ timeLeft, testFailed }: BrokenPageProps) {
                     borderRadius: '8px'
                 }}>
                     <h2 style={{ margin: '0 0 10px 0' }}>TEST FAILED ❌</h2>
-                    <p style={{ margin: '0' }}>You're a vibe, not a dev. Come back in a week after you've learned the basics.</p>
+                    <p style={{ margin: '0' }}>Youre a vibe, not a dev. Come back in a week after youve learned the basics.</p>
                 </div>
             )}
         </div>
