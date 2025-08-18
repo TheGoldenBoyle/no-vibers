@@ -22,7 +22,7 @@ export default function HeroSection() {
                     </p>
                     <span className="text-primary"> No Vibers</span>
                     <LinkButton
-                        href="https://x.com/thegoldenbolye"
+                        href="https://x.com/thegoldenboyle"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="mx-auto"
