@@ -159,7 +159,7 @@ export default function ChallengeTestPage() {
     } else if (timeLeft === 0 && !testPassed && testStarted) {
       handleTestFailure()
     }
-  }, [timeLeft, isTimerActive, testPassed, testStarted, handleTestFailure])
+  }, [timeLeft, isTimerActive, testPassed, testStarted])
 
 
   const handleTestSuccess = () => {
@@ -321,7 +321,7 @@ export default function ChallengeTestPage() {
             textAlign: 'left'
           }}>
             <h2 style={{ color: '#c2410c', marginBottom: '20px', fontSize: '24px' }}>
-              Here's what's about to happen:
+              Heres whats about to happen:
             </h2>
             
             <ul style={{ fontSize: '18px', lineHeight: '1.8', paddingLeft: '20px' }}>
