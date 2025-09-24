@@ -1,34 +1,46 @@
-'use client'
+"use client"
 
-import React from 'react'
-import LinkButton from './ui/LinkButton'
-
-export default function HeroSection() {
+export default function SimpleHero() {
     return (
-        <section className="p-6 h-screen md:h-[90h] grid place-items-center relative">
-            <div className="max-w-4xl mx-auto text-center space-y-6 lg:space-y-8">
-                <div className="space-y-4 lg:space-y-8">
-                    <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                        When Full-Stack
-                        <span className="text-primary"> Meets AI</span>
-                    </h1>
-                    <div className="text-xl md:text-2xl max-w-3xl mx-auto space-y-2">
-                        <p >Real-world experience fused with AI firepower</p>
-                    </div>
-                </div>
-                <div className="max-w-md mx-auto mb-16 flex flex-col gap-4">
-                    <p className="text-lg">
-                        Recruiting fearless trend setters for the revolution... 
-                    </p>
-                    <span className="text-primary"> No Vibers</span>
-                    <LinkButton
-                        href="https://x.com/thegoldenboyle"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mx-auto"
+        <section className="h-screen w-screen flex items-center justify-center bg-x-dark text-x-text relative overflow-hidden">
+            {/* Background Grid */}
+            <div 
+                className="fixed inset-0 z-5 pointer-events-none opacity-20"
+                style={{
+                    backgroundImage: `
+                        linear-gradient(rgba(91, 207, 199, 0.08) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(91, 207, 199, 0.08) 1px, transparent 1px)
+                    `,
+                    backgroundSize: '40px 40px'
+                }}
+            />
+            
+            {/* Hero Content */}
+            <div className="text-center space-y-8 px-6 max-w-4xl mx-auto z-10 relative">
+                <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+                    <span className="text-x-primary">NoVibers</span>
+                    <span className="block text-x-text">AI Code Quality</span>
+                </h1>
+                
+                <p className="text-xl md:text-2xl text-x-muted max-w-3xl mx-auto leading-relaxed">
+                    Detect "vibe coding" and unprofessional patterns with AI-powered analysis. 
+                    From individual scans to complete GitHub candidate assessments.
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-12">
+                    <a
+                        href="#signup"
+                        className="bg-x-primary hover:bg-x-primary/90 text-x-dark font-semibold px-8 py-4 rounded-lg transition-all transform hover:scale-105 shadow-lg"
+                        onClick={(e) => {
+                            e.preventDefault()
+                            document.getElementById('signup')?.scrollIntoView({ behavior: 'smooth' })
+                        }}
                     >
-                        Join the army @thegoldenbolye
-                    </LinkButton>
+                        Join Beta - Pay Per Scan
+                    </a>
+                    <div className="bg-x-primary/10 px-6 py-3 rounded-full border border-x-primary/20">
+                        <span className="text-x-primary font-semibold">No Subscriptions • Strongest AI Models</span>
+                    </div>
                 </div>
             </div>
         </section>

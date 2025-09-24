@@ -1,94 +1,99 @@
-import { Space_Grotesk, JetBrains_Mono } from 'next/font/google'
+import type { Metadata } from 'next'
+import { Inter, JetBrains_Mono } from 'next/font/google'
+import Footer from "@/components/partials/Footer"
+import Navbar from "@/components/partials/Navbar"
 import './styles/globals.css'
-import { Metadata } from 'next'
-import { Analytics } from "@vercel/analytics/next"
 
-
-const spaceGrotesk = Space_Grotesk({ 
+// Font configuration
+const inter = Inter({
     subsets: ['latin'],
-    variable: '--font-space-grotesk',
-    display: 'swap'
+    display: 'swap',
+    variable: '--font-inter',
 })
 
-const jetbrainsMono = JetBrains_Mono({ 
+const jetbrainsMono = JetBrains_Mono({
     subsets: ['latin'],
+    display: 'swap',
     variable: '--font-jetbrains-mono',
-    display: 'swap'
 })
 
+// SEO Metadata
 export const metadata: Metadata = {
-    title: 'NoVibers - Real Full-Stack Devs Powered by AI',
-    description: 'When real-world full-stack expertise meets AI, we build unstoppable software with speed and passion. Join @thegoldenbolyes army of builders who ship fast and deliver software that lasts.',
-    keywords: [
-        'full-stack development',
-        'AI-powered coding',
-        'real-world experience',
-        'software development',
-        'build with passion',
-        'AI and development',
-        'no gatekeepers',
-        '10x engineers',
-        'coding army',
-        'software that lasts',
-        'real developers',
-        'fast shipping code',
-        'AI-driven development',
-        'full-stack skills',
-        'developer community'
-    ],
-    authors: [{ name: 'TheGoldenBoyle', url: 'https://novibers.com' }],
-    creator: 'TheGoldenBoyle',
-    publisher: 'TheGoldenBoyle',
-
-    verification: {
-        google: 'jo0KUpPdyrmwlo2k0yA7n8eGfoDddzpCwvAB3TW9aOo',
+    title: {
+        default: 'NoVibers - AI Code Quality Analysis | Pay Per Scan, No Subscriptions',
+        template: '%s | NoVibers - AI Code Quality'
     },
-
+    description: 'NoVibers uses AI to detect "vibe coding" and unprofessional patterns in your code. From individual scans to complete GitHub candidate assessments. Pay per scan with the strongest AI models available.',
+    keywords: [
+        'code quality',
+        'AI code analysis',
+        'GitHub candidate screening',
+        'HR developer assessment', 
+        'professional coding',
+        'clean code',
+        'pay per scan',
+        'no subscription',
+        'vibe coding detection',
+        'AI slop detection',
+        'developer tools',
+        'GitHub integration',
+        'TypeScript',
+        'JavaScript',
+        'Python',
+        'code review automation',
+        'variable naming',
+        'debug code detection',
+        'console.log removal',
+        'candidate evaluation',
+        'developer hiring'
+    ],
+    authors: [{ name: 'NoVibers Team' }],
+    creator: 'NoVibers',
+    publisher: 'NoVibers',
+    category: 'Developer Tools',
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+        },
+    },
+    metadataBase: new URL('https://novibers.com'),
+    alternates: {
+        canonical: '/',
+    },
     openGraph: {
         type: 'website',
         locale: 'en_US',
         url: 'https://novibers.com',
         siteName: 'NoVibers',
-        title: 'NoVibers - Real Full-Stack Devs Powered by AI',
-        description: 'Join @thegoldenbolyes army of full-stack devs who blend real-world grit with AI to build software that lasts. No gatekeepers, just builders with speed and passion.',
+        title: 'NoVibers - AI Code Quality Analysis | HR GitHub Screening',
+        description: 'AI-powered code quality analysis for developers and HR teams. Scan individual projects or assess GitHub candidates at scale. Pay per scan, no subscriptions.',
         images: [
             {
-                url: '/assets/images/og-image.png',
+                url: '/og-image.png',
                 width: 1200,
                 height: 630,
-                alt: 'NoVibers - Real Full-Stack Devs Powered by AI',
-                type: 'image/jpeg',
+                alt: 'NoVibers - AI Code Quality Analysis and GitHub Candidate Screening',
+                type: 'image/png',
             }
         ],
     },
-
     twitter: {
         card: 'summary_large_image',
         site: '@TheGoldenBoyle',
         creator: '@TheGoldenBoyle',
-        title: 'NoVibers - Real Full-Stack Devs Powered by AI',
-        description: 'When full-stack meets AI, we build with speed, passion, and real-world experience. Join @thegoldenbolyes army to ship software that lasts.',
-        images: ['/assets/images/og-image.png'],
+        title: 'NoVibers - AI Code Quality Analysis',
+        description: 'Clean up your code with AI analysis. Perfect for developers and HR teams screening GitHub candidates. Pay per scan, no subscriptions.',
+        images: ['/og-image.png'],
     },
-
-    icons: {
-        icon: [
-            { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-            { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-        ],
-        apple: [
-            { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
-        ],
-        other: [
-            { rel: 'mask-icon', url: '/safari-pinned-tab.svg', color: '#c2410c' },
-        ],
-    },
-
-    metadataBase: new URL('https://novibers.com'),
-    alternates: {
-        canonical: 'https://novibers.com',
-    },
-    category: 'technology',
+    other: {
+        'theme-color': '#f62681',
+    }
 }
 
 export default function RootLayout({
@@ -97,11 +102,37 @@ export default function RootLayout({
     children: React.ReactNode
 }) {
     return (
-        <html lang="en">
-            <body className={`${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
-                <Analytics/> 
-                {children}
+        <html
+            lang="en"
+            className={`${inter.variable} ${jetbrainsMono.variable} scroll-smooth`}
+            suppressHydrationWarning
+        >
+            <head>
+                {/* Essential Performance Hints */}
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+                
+                {/* Basic Favicons */}
+                <link rel="icon" href="/favicon.ico" />
+                <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+            </head>
 
+            <body className="bg-x-dark text-x-text antialiased min-h-screen">
+                {/* Skip Navigation for Accessibility */}
+                <a
+                    href="#main-content"
+                    className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-x-primary text-x-dark px-4 py-2 rounded-lg z-[9999] focus:outline-none focus:ring-2 focus:ring-x-primary transition-all"
+                >
+                    Skip to main content
+                </a>
+
+                <Navbar />
+
+                <main id="main-content" role="main">
+                    {children}
+                </main>
+
+                <Footer />
             </body>
         </html>
     )
