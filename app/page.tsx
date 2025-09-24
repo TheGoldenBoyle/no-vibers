@@ -72,7 +72,6 @@ export default function Home() {
                             </div>
                             <div className="bg-red-500/5 border border-red-500/20 rounded-xl p-8 space-y-6 hover:border-red-500/30 transition-all h-full flex flex-col">
                                 <h3 className="text-2xl font-bold text-red-400 flex items-center">
-                                    <span className="text-3xl mr-3">😬</span>
                                     The Complete Giveaways
                                 </h3>
 
@@ -128,7 +127,6 @@ export default function Home() {
                             </div>
                             <div className="bg-x-primary/5 border border-x-primary/20 rounded-xl p-8 space-y-6 hover:border-x-primary/30 transition-all h-full flex flex-col">
                                 <h3 className="text-2xl font-bold text-x-primary flex items-center">
-                                    <span className="text-3xl mr-3">✨</span>
                                     The Confidence Boost
                                 </h3>
 
