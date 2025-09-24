@@ -1,7 +1,7 @@
 "use client"
 
 import BetaSignupForm from "@/components/BetaSignupForm"
-import { Terminal, Code, Users, Shield, Zap, FileSearch, GitBranch, BarChart } from "lucide-react"
+import { Terminal, Code, Users, Shield, FileSearch, GitBranch, BarChart } from "lucide-react"
 
 export default function Home() {
     return (
@@ -28,7 +28,7 @@ export default function Home() {
                     </h1>
 
                     <p className="text-xl md:text-2xl text-x-muted max-w-3xl mx-auto leading-relaxed">
-                        Detect "vibe coding" and unprofessional patterns with AI-powered analysis.
+                        Detect &quot;vibe coding&quot; and unprofessional patterns with AI-powered analysis.
                         From individual scans to complete GitHub candidate assessments.
                     </p>
 
@@ -55,11 +55,11 @@ export default function Home() {
                 <div className="max-w-6xl mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                            The Code We'd Rather Forget
+                            The Code We&apos;d Rather Forget
                         </h2>
                         <p className="text-xl text-x-muted max-w-3xl mx-auto leading-relaxed">
-                            Every developer has shipped code they're not proud of. The pressure to deliver, the late-night fixes,
-                            the "temporary" solutions that became permanent...
+                            Every developer has shipped code they&apos;re not proud of. The pressure to deliver, the late-night fixes,
+                            the &quot;temporary&quot; solutions that became permanent...
                         </p>
                     </div>
 
@@ -80,21 +80,21 @@ export default function Home() {
                                     <div className="bg-red-500/10 rounded-lg p-4 border-l-4 border-red-500/50">
                                         <h4 className="font-semibold text-red-300 mb-2 text-sm uppercase tracking-wide">File Header</h4>
                                         <div className="bg-gray-900 rounded p-3 font-mono text-sm text-red-200 overflow-x-auto">
-                                            <code>// app/dashboard/page.tsx</code>
+                                            <code>{`// app/dashboard/page.tsx`}</code>
                                         </div>
                                     </div>
 
                                     <div className="bg-red-500/10 rounded-lg p-4 border-l-4 border-red-500/50">
                                         <h4 className="font-semibold text-red-300 mb-2 text-sm uppercase tracking-wide">AI Slop Detection</h4>
                                         <div className="bg-gray-900 rounded p-3 font-mono text-sm text-red-200 overflow-x-auto">
-                                            <code>// import React from 'react'</code>
+                                            <code>{`// import React from 'react'`}</code>
                                         </div>
                                     </div>
 
                                     <div className="bg-red-500/10 rounded-lg p-4 border-l-4 border-red-500/50">
                                         <h4 className="font-semibold text-red-300 mb-2 text-sm uppercase tracking-wide">Debug Disasters</h4>
                                         <div className="bg-gray-900 rounded p-3 font-mono text-sm text-red-200 overflow-x-auto">
-                                            <code>console.log("why isn't this working???")</code>
+                                            <code>{`console.log("why isn't this working???")`}</code>
                                         </div>
                                     </div>
 
@@ -108,14 +108,14 @@ export default function Home() {
                                     <div className="bg-red-500/10 rounded-lg p-4 border-l-4 border-red-500/50">
                                         <h4 className="font-semibold text-red-300 mb-2 text-sm uppercase tracking-wide">Magic Madness</h4>
                                         <div className="bg-gray-900 rounded p-3 font-mono text-sm text-red-200 overflow-x-auto">
-                                            <code>if (users.length &gt; 42) // why 42?</code>
+                                            <code>if (users.length &gt; 42) {`// why 42?`}</code>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div className="pt-4 border-t border-red-500/20 mt-auto">
                                     <p className="text-red-300 text-sm italic">
-                                        "I'll clean this up later..." - Famous last words
+                                        &quot;I&apos;ll clean this up later...&quot; - Famous last words
                                     </p>
                                 </div>
                             </div>
@@ -161,7 +161,7 @@ export default function Home() {
 
                                 <div className="pt-4 border-t border-x-primary/20 mt-auto">
                                     <p className="text-x-primary text-sm font-medium">
-                                        "This code actually makes sense!" - Your future self
+                                        &quot;This code actually makes sense!&quot; - Your future self
                                     </p>
                                 </div>
                             </div>

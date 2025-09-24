@@ -23,7 +23,7 @@ export default function SimpleHero() {
                 </h1>
                 
                 <p className="text-xl md:text-2xl text-x-muted max-w-3xl mx-auto leading-relaxed">
-                    Detect "vibe coding" and unprofessional patterns with AI-powered analysis. 
+                    Detect &quot;vibe coding&quot; and unprofessional patterns with AI-powered analysis. 
                     From individual scans to complete GitHub candidate assessments.
                 </p>
                 

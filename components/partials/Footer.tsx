@@ -27,7 +27,7 @@ export default function Footer() {
                             </div>
                         </div>
                         <p className="text-x-muted max-w-md">
-                            Detect "vibe coding" and unprofessional patterns before they embarrass you. 
+                            Detect &quot;vibe coding&quot; and unprofessional patterns before they embarrass you. 
                             AI-powered code quality analysis for modern developers.
                         </p>
                         <div className="bg-x-primary/10 px-4 py-2 rounded-lg border border-x-primary/20 inline-block">

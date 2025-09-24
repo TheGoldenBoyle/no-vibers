@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, KeyboardEvent } from "react"
 import Button from "./ui/Button"
 import { Mail, CheckCircle, AlertCircle } from "lucide-react"
 
@@ -46,6 +46,7 @@ export default function BetaSignupForm() {
             }
         } catch (error) {
             setResponse({ error: "Something went wrong. Please try again." })
+            console.log(error)
         } finally {
             setIsLoading(false)
         }
@@ -63,7 +64,11 @@ export default function BetaSignupForm() {
                         placeholder="Enter your email for beta access"
                         className="w-full pl-10 pr-4 py-3 bg-x-dark/50 border border-x-muted/30 rounded-lg focus:outline-none focus:border-x-primary focus:ring-2 focus:ring-x-primary/20 text-x-text placeholder-x-muted/60"
                         disabled={isLoading}
-                        onKeyDown={(e) => e.key === 'Enter' && handleSubmit(e as any)}
+                        onKeyDown={(e) => {
+                            if (e.key === 'Enter') {
+                                handleSubmit(e)
+                            }
+                        }}
                     />
                 </div>
 
