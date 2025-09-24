@@ -346,7 +346,7 @@ export default function Home() {
             </section>
 
             {/* Beta Signup Section */}
-            <section id="signup" className="py-20 px-6">
+            <section id="signup" className="py-20 px-6 max-w-xl mx-auto">
                 <div className="max-w-4xl mx-auto">
                     <div className="text-center mb-12">
                         <h2 className="text-4xl md:text-6xl font-bold mb-8">

@@ -53,7 +53,7 @@ export default function BetaSignupForm() {
     }
 
     return (
-        <div className="w-full max-w-md mx-auto">
+        <div className="w-full max-w-md !mx-auto">
             <div className="space-y-4">
                 <div className="relative">
                     <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-x-muted w-5 h-5" />
