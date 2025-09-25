@@ -75,7 +75,7 @@ export const metadata: Metadata = {
         description: 'AI-powered code quality analysis for developers and HR teams. Scan individual projects or assess GitHub candidates at scale. Pay per scan, no subscriptions.',
         images: [
             {
-                url: '/og-image.png',
+                url: '/og-image-1.png',
                 width: 1200,
                 height: 630,
                 alt: 'NoVibers - AI Code Quality Analysis and GitHub Candidate Screening',
@@ -89,7 +89,7 @@ export const metadata: Metadata = {
         creator: '@TheGoldenBoyle',
         title: 'NoVibers - AI Code Quality Analysis',
         description: 'Clean up your code with AI analysis. Perfect for developers and HR teams screening GitHub candidates. Pay per scan, no subscriptions.',
-        images: ['/og-image.png'],
+        images: ['/og-image-1.png'],
     },
     other: {
         'theme-color': '#f62681',
