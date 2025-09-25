@@ -1,12 +1,7 @@
 import { NextRequest, NextResponse } from "next/server"
 import { Resend } from "resend"
-import fs from "fs/promises"
-import path from "path"
 
 const resend = new Resend(process.env.RESEND_API_KEY)
-
-// File to store signups persistently
-const SIGNUPS_FILE = path.join(process.cwd(), "data", "signups.json")
 
 interface Signup {
 	email: string
@@ -21,28 +16,15 @@ interface SignupsData {
 	count: number
 }
 
-async function ensureDataDirectory() {
-	const dataDir = path.dirname(SIGNUPS_FILE)
-	try {
-		await fs.access(dataDir)
-	} catch {
-		await fs.mkdir(dataDir, { recursive: true })
-	}
-}
+// In-memory storage (resets on deployment)
+let signupsData: SignupsData = { signups: [], count: 0 }
 
 async function loadSignups(): Promise<SignupsData> {
-	try {
-		await ensureDataDirectory()
-		const data = await fs.readFile(SIGNUPS_FILE, "utf-8")
-		return JSON.parse(data)
-	} catch {
-		return { signups: [], count: 0 }
-	}
+	return signupsData
 }
 
 async function saveSignups(data: SignupsData): Promise<void> {
-	await ensureDataDirectory()
-	await fs.writeFile(SIGNUPS_FILE, JSON.stringify(data, null, 2))
+	signupsData = data
 }
 
 export async function POST(request: NextRequest) {
@@ -55,7 +37,7 @@ export async function POST(request: NextRequest) {
 				{ status: 400 }
 			)
 		}
-
+		// JamesDont4getThis123cRAY
 		if (!email.includes("@") || email.length < 5) {
 			return NextResponse.json(
 				{ error: "Please enter a valid email address" },
@@ -65,9 +47,9 @@ export async function POST(request: NextRequest) {
 
 		const normalizedEmail = email.toLowerCase().trim()
 
-		const signupsData = await loadSignups()
+		const currentSignupsData = await loadSignups()
 
-		const existingSignup = signupsData.signups.find(
+		const existingSignup = currentSignupsData.signups.find(
 			(s) => s.email === normalizedEmail
 		)
 		if (existingSignup) {
@@ -80,7 +62,7 @@ export async function POST(request: NextRequest) {
 			)
 		}
 
-		const newNumber = signupsData.count + 1
+		const newNumber = currentSignupsData.count + 1
 		const newSignup: Signup = {
 			email: normalizedEmail,
 			timestamp: new Date().toISOString(),
@@ -92,10 +74,10 @@ export async function POST(request: NextRequest) {
 				undefined,
 		}
 
-		signupsData.signups.push(newSignup)
-		signupsData.count = newNumber
+		currentSignupsData.signups.push(newSignup)
+		currentSignupsData.count = newNumber
 
-		await saveSignups(signupsData)
+		await saveSignups(currentSignupsData)
 
 		if (process.env.RESEND_API_KEY && process.env.RESEND_TO_EMAIL) {
 			try {
@@ -153,7 +135,6 @@ export async function POST(request: NextRequest) {
 				})
 			} catch (emailError) {
 				console.error("Failed to send notification email:", emailError)
-				// Don't fail the signup if email fails
 			}
 		}
 

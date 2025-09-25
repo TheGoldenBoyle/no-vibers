@@ -6,7 +6,6 @@ import { Terminal, Code, Users, Shield, FileSearch, GitBranch, BarChart } from "
 export default function Home() {
     return (
         <div className="bg-x-dark text-x-text">
-            {/* Simple Hero Section */}
             <section className="h-screen w-screen flex items-center justify-center relative overflow-hidden">
                 {/* Background Grid */}
                 <div
