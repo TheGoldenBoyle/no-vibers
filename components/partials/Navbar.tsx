@@ -1,12 +1,20 @@
+"use client"
+
 import { Terminal, Github } from "lucide-react"
 import Link from "next/link"
+import { useScrollDirection } from "@/hooks/useScrollDirection"
 
 export default function Navbar() {
+    const scrollDirection = useScrollDirection()
 
     return (
-        <header className="sticky top-0 z-[100]">
+        <header 
+            className={`fixed top-0 left-0 right-0 z-[100] transition-transform duration-300 ease-in-out ${
+                scrollDirection === 'down' ? '-translate-y-full' : 'translate-y-0'
+            }`}
+        >
             <nav
-                className="px-6 py-4 bg-x-dark/95 backdrop-blur-sm border-b border-x-muted/10"
+                className="px-6 py-4 bg-x-dark/95 backdrop-blur-sm border-b border-x-dark-border"
                 role="navigation"
                 aria-label="Main navigation"
             >
@@ -18,7 +26,7 @@ export default function Navbar() {
                         title="Go to NoVibers homepage"
                     >
                         <div className="flex items-center space-x-3 group-hover:scale-105 transition-all">
-                            <div className="bg-x-primary/20 p-2 rounded-lg">
+                            <div className="bg-x-primary-light p-2 rounded-lg">
                                 <Terminal
                                     className="h-6 w-6 text-x-primary"
                                     aria-hidden="true"
@@ -33,8 +41,8 @@ export default function Navbar() {
 
                     <div className="flex items-center space-x-6">
                         {/* Beta Badge */}
-                        <div className="hidden sm:flex bg-x-primary/10 px-3 py-1 rounded-full border border-x-primary/20">
-                            <span className="text-x-primary text-sm font-semibold">🚧 Beta Coming Soon</span>
+                        <div className="hidden sm:flex bg-x-primary-light px-3 py-1 rounded-full border border-x-primary/20">
+                            <span className="text-x-primary text-sm font-semibold">Beta Coming Soon</span>
                         </div>
 
                         <div className="flex items-center space-x-4">
@@ -47,7 +55,7 @@ export default function Navbar() {
                                 className="group"
                             >
                                 <Github
-                                    className="size-6 text-x-muted group-hover:text-x-primary group-hover:scale-110 transition-all"
+                                    className="size-6 text-x-text-muted group-hover:text-x-primary group-hover:scale-110 transition-all"
                                     aria-hidden="true"
                                     strokeWidth={1.5}
                                 />
@@ -62,7 +70,7 @@ export default function Navbar() {
                                 className="group"
                             >
                                 <svg
-                                    className="size-6 fill-x-muted group-hover:fill-x-primary group-hover:scale-110 transition-all"
+                                    className="size-6 fill-x-text-muted group-hover:fill-x-primary group-hover:scale-110 transition-all"
                                     xmlns="http://www.w3.org/2000/svg"
                                     x="0px"
                                     y="0px"

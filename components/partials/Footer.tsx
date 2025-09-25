@@ -1,26 +1,17 @@
-"use client"
-
 export default function Footer() {
-    const handleScrollToSignup = (e: React.MouseEvent<HTMLAnchorElement>) => {
-        e.preventDefault()
-        const signupSection = document.getElementById('signup')
-        if (signupSection) {
-            signupSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
-        }
-    }
     return (
-        <footer className="bg-x-dark border-t border-x-muted/10">
+        <footer className="bg-x-dark border-t border-x-text-muted/10 py-10">
             <div className="max-w-7xl mx-auto px-6 py-2">
-                {/* Main Footer Content */}
-             
-                
-                        <div className="bg-x-primary/10 px-4 py-2 rounded-lg border border-x-primary/20 flex justify-center">
-                            <span className="text-x-primary font-semibold text-sm !max-w-sm">🚧 Coming Soon - Beta Access</span>
-                        </div>
-          
 
-                {/* Bottom Section */}
-                <div className="border-t border-x-muted/10 pt-8">
+
+
+                <div className="bg-x-primary/10 px-4 py-2 rounded-lg border border-x-primary/20 flex justify-center">
+                    <span className="text-x-primary font-semibold text-sm !max-w-sm">Coming Soon - Beta Access</span>
+                </div>
+
+
+
+                <div className="border-t border-x-text-muted/10 pt-8">
                     <div className="text-center">
                         <p className="text-sm text-x-muted">
                             © 2025 NoVibers. All rights reserved.

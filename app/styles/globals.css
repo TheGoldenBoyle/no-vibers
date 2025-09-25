@@ -1,26 +1,77 @@
 @import "tailwindcss";
 
 :root {
+	/* Core brand colors */
 	--x-primary: #f62681;
+	--x-primary-hover: #e11a73;
+	--x-primary-light: #f6268120;
+	
+	/* Background colors */
 	--x-dark: #050505;
-	--x-muted: #cfcfcf;
+	--x-dark-elevated: #0a0a0a;
+	--x-dark-border: #1a1a1a;
+	
+	/* Text colors */
 	--x-text: #ffffff;
+	--x-text-secondary: #a3a3a3;
+	--x-text-muted: #737373;
+	
+	/* Status colors */
+	--x-success: #22c55e;
+	--x-success-light: #22c55e20;
+	--x-error: #ef4444;
+	--x-error-light: #ef444420;
+	--x-warning: #f59e0b;
+	--x-warning-light: #f59e0b20;
 }
 
 @media (prefers-color-scheme: light) {
 	:root {
+		/* Core brand colors stay the same */
 		--x-primary: #f62681;
+		--x-primary-hover: #e11a73;
+		--x-primary-light: #f6268120;
+		
+		/* Background colors inverted */
 		--x-dark: #ffffff;
-		--x-muted: #7d757b;
+		--x-dark-elevated: #f8f8f8;
+		--x-dark-border: #e5e5e5;
+		
+		/* Text colors inverted */
 		--x-text: #000000;
+		--x-text-secondary: #525252;
+		--x-text-muted: #737373;
+		
+		/* Status colors adjusted for light mode */
+		--x-success: #16a34a;
+		--x-success-light: #16a34a20;
+		--x-error: #dc2626;
+		--x-error-light: #dc262620;
+		--x-warning: #d97706;
+		--x-warning-light: #d9770620;
 	}
 }
 
 @theme inline {
+	/* Map CSS variables to Tailwind colors */
 	--color-x-primary: var(--x-primary);
+	--color-x-primary-hover: var(--x-primary-hover);
+	--color-x-primary-light: var(--x-primary-light);
+	
 	--color-x-dark: var(--x-dark);
-	--color-x-muted: var(--x-muted);
+	--color-x-dark-elevated: var(--x-dark-elevated);
+	--color-x-dark-border: var(--x-dark-border);
+	
 	--color-x-text: var(--x-text);
+	--color-x-text-secondary: var(--x-text-secondary);
+	--color-x-text-muted: var(--x-text-muted);
+	
+	--color-x-success: var(--x-success);
+	--color-x-success-light: var(--x-success-light);
+	--color-x-error: var(--x-error);
+	--color-x-error-light: var(--x-error-light);
+	--color-x-warning: var(--x-warning);
+	--color-x-warning-light: var(--x-warning-light);
 
 	--font-sans: var(--font-inter), system-ui, sans-serif;
 	--font-mono: var(--font-jetbrains-mono), "Courier New", monospace;
@@ -28,6 +79,7 @@
 
 * {
 	font-family: var(--font-inter), system-ui, sans-serif;
+	box-sizing: border-box;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -45,8 +97,4 @@ body {
 a {
 	color: inherit;
 	text-decoration: none;
-}
-
-* {
-	box-sizing: border-box;
 }

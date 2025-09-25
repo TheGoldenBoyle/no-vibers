@@ -115,14 +115,14 @@ export async function POST(request: NextRequest) {
                   <p>• Next Milestone: ${getNextMilestone(newNumber)}</p>
                   <p>• Beta Status: ${
 						newNumber >= 100
-							? "Ready to Launch! 🎉"
-							: "Building Momentum 💪"
+							? "Ready to Launch!"
+							: "Building Momentum"
 					}</p>
                 </div>
               </div>
               
               <div style="text-align: center; margin: 30px 0;">
-                <p style="color: #cfcfcf; margin: 0;">Another developer wants cleaner code! 🔥</p>
+                <p style="color: #cfcfcf; margin: 0;">Another developer wants cleaner code!</p>
               </div>
               
               <div style="border-top: 1px solid rgba(91, 207, 199, 0.2); padding-top: 20px; text-align: center;">
@@ -193,19 +193,19 @@ function getNextMilestone(number: number): string {
 	if (number < 50) return `50 signups (${50 - number} to go)`
 	if (number < 100) return `100 signups (${100 - number} to go)`
 	if (number < 250) return `250 signups (${250 - number} to go)`
-	return "You're crushing it! 🎉"
+	return "You're crushing it! "
 }
 
 function generateSuccessMessage(number: number): string {
 	if (number <= 10) {
-		return `Welcome to the beta! You're among the first ${number} early supporters! 🌟`
+		return `Welcome to the beta! You're among the first ${number} early supporters!`
 	} else if (number <= 50) {
-		return `Thanks for joining! You're #${number} of our first 50 beta testers! 🚀`
+		return `Thanks for joining! You're #${number} of our first 50 beta testers!`
 	} else if (number <= 100) {
-		return `Awesome! You're #${number} on the list. Thanks for the support! 💪`
+		return `Awesome! You're #${number} on the list. Thanks for the support!`
 	} else if (number === 101) {
-		return `Wow! You're signup #${number}! We've officially hit 100+ signups! 🎉`
+		return `Wow! You're signup #${number}! We've officially hit 100+ signups!`
 	} else {
-		return `Thanks for joining! You're #${number}. The community is growing fast! 🔥`
+		return `Thanks for joining! You're #${number}. The community is growing fast!`
 	}
 }

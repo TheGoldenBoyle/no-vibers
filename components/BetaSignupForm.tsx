@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, KeyboardEvent } from "react"
+import { useState } from "react"
 import Button from "./ui/Button"
 import { Mail, CheckCircle, AlertCircle } from "lucide-react"
 
@@ -53,16 +53,16 @@ export default function BetaSignupForm() {
     }
 
     return (
-        <div className="w-full max-w-md !mx-auto">
+        <div className="w-full max-w-md mx-auto">
             <div className="space-y-4">
                 <div className="relative">
-                    <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-x-muted w-5 h-5" />
+                    <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-x-text-muted w-5 h-5" />
                     <input
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="Enter your email for beta access"
-                        className="w-full pl-10 pr-4 py-3 bg-x-dark/50 border border-x-muted/30 rounded-lg focus:outline-none focus:border-x-primary focus:ring-2 focus:ring-x-primary/20 text-x-text placeholder-x-muted/60"
+                        className="w-full pl-10 pr-4 py-3 bg-x-dark-elevated border border-x-dark-border rounded-lg focus:outline-none focus:border-x-primary focus:ring-2 focus:ring-x-primary-light text-x-text placeholder-x-text-muted"
                         disabled={isLoading}
                         onKeyDown={(e) => {
                             if (e.key === 'Enter') {
@@ -74,7 +74,7 @@ export default function BetaSignupForm() {
 
                 <Button
                     onClick={handleSubmit}
-                    className="w-full bg-x-primary hover:bg-x-primary/90 text-x-dark font-semibold py-3 px-6 rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full bg-x-primary hover:bg-x-primary-hover text-x-dark font-semibold py-3 px-6 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     disabled={isLoading || !email}
                 >
                     {isLoading ? (
@@ -83,7 +83,7 @@ export default function BetaSignupForm() {
                             <span>Joining Beta...</span>
                         </div>
                     ) : (
-                        "Get Early Access 🚀"
+                        "Get Early Access"
                     )}
                 </Button>
             </div>
@@ -92,34 +92,34 @@ export default function BetaSignupForm() {
             {response && (
                 <div className="mt-4 animate-in fade-in duration-300">
                     {response.success ? (
-                        <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-4 text-center">
-                            <CheckCircle className="w-6 h-6 text-green-400 mx-auto mb-2" />
-                            <p className="text-green-400 font-semibold mb-1">
-                                Welcome to the beta! 🎉
+                        <div className="bg-x-success-light border border-x-success/20 rounded-lg p-4 text-center">
+                            <CheckCircle className="w-6 h-6 text-x-success mx-auto mb-2" />
+                            <p className="text-x-success font-semibold mb-1">
+                                Welcome to the beta!
                             </p>
-                            <p className="text-x-muted text-sm">
+                            <p className="text-x-text-secondary text-sm">
                                 {response.message}
                             </p>
                             {response.isEarlySupporter && (
-                                <div className="mt-3 bg-x-primary/10 border border-x-primary/20 rounded-md p-2">
+                                <div className="mt-3 bg-x-primary-light border border-x-primary/20 rounded-md p-2">
                                     <span className="text-x-primary text-sm font-medium">
-                                        ⭐ Early Supporter Badge Unlocked!
+                                        Early Supporter Badge Unlocked!
                                     </span>
                                 </div>
                             )}
                         </div>
                     ) : (
-                        <div className="bg-red-500/10 border border-red-500/20 rounded-lg p-4 text-center">
-                            <AlertCircle className="w-6 h-6 text-red-400 mx-auto mb-2" />
-                            <p className="text-red-400 font-semibold mb-1">
+                        <div className="bg-x-error-light border border-x-error/20 rounded-lg p-4 text-center">
+                            <AlertCircle className="w-6 h-6 text-x-error mx-auto mb-2" />
+                            <p className="text-x-error font-semibold mb-1">
                                 {response.isAlreadySignedUp ? "Already on the list!" : "Oops!"}
                             </p>
-                            <p className="text-x-muted text-sm">
+                            <p className="text-x-text-secondary text-sm">
                                 {response.error}
                             </p>
                             {response.isAlreadySignedUp && (
                                 <div className="mt-2 text-x-primary text-sm">
-                                    Thanks for your enthusiasm! 💪
+                                    Thanks for your enthusiasm!
                                 </div>
                             )}
                         </div>
@@ -129,7 +129,7 @@ export default function BetaSignupForm() {
 
             {/* Trust Indicators */}
             <div className="mt-6 text-center">
-                <div className="flex items-center justify-center space-x-4 text-xs text-x-muted">
+                <div className="flex items-center justify-center space-x-4 text-xs text-x-text-muted">
                     <div className="flex items-center space-x-1">
                         <CheckCircle className="w-3 h-3" />
                         <span>No spam</span>
